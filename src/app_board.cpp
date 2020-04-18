@@ -252,15 +252,15 @@ void board_led_status(SYS_status status){
 			break;
 		
 		case SYS_CONFIGING_STA://在STA模式下 快闪
-			board_led_color(LED_B, 1);
+			board_led_color(LED_B, 0);
 			break;
 
 		case SYS_CONFIGING_AP://在AP模式下 慢闪
-			board_led_color(LED_O, 1);
+			board_led_color(LED_O, 0);
 			break;
 
 		case SYS_LOST_CONNECT://没连接路由 灭
-			board_led_color(LED_R, 1);
+			board_led_color(LED_R, 0);
 			break;
 
 		case SYS_ONLINE://在线常亮
