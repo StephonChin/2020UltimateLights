@@ -77,9 +77,10 @@ led_flash
 ********/
 void led_flash()                        //中断处理函数，改变灯的状态
 {                        
-  static boolean output = HIGH;
-  digitalWrite(LED_G_PIN, output);
-  output = !output;
+//   static boolean output = HIGH;
+//   digitalWrite(LED_G_PIN, output);
+//   output = !output;
+	app_system_status_loop(g_sys_cnn);
 }
 
 
@@ -687,11 +688,13 @@ int sys_ota_update(const u8 *p_url){
 
 	if(p_url && strstr( (const char*)p_url, "http:") ){
 
-        board_led_status(SYS_OTAING);
+        //board_led_status(SYS_OTAING);
         myTicker.attach(0.2, led_flash); //初始化调度任务，每0.5秒执行一次led_flash()
         //SYS_status_set(SYS_CNN_OTAING);
-		t_httpUpdate_return  ret = ESPhttpUpdate.update((const char*)p_url);
+		board_led_status(SYS_OTAING);
 		sys_cnn_status_set(SYS_OTAING);
+		t_httpUpdate_return  ret = ESPhttpUpdate.update((const char*)p_url);
+		
 			switch(ret) {
 				case HTTP_UPDATE_FAILED:
 				    g_reboot  = 1;

@@ -272,7 +272,7 @@ void board_led_status(SYS_status status){
 
 void board_setup(void){
 
-	system_update_cpu_freq(SYS_CPU_160MHZ);
+	// system_update_cpu_freq(SYS_CPU_160MHZ);
 	
 #ifdef RESET_TEST
     pinMode(FAC_TEST_PIN, OUTPUT);//M

@@ -25,7 +25,7 @@
 #define SFAP_SSID_	"UltimateString_"
 /* 版本 */
 #define VERSION_MAJOR   0
-#define VERSION_MINOR   2
-#define VERSION_PATCH   22
+#define VERSION_MINOR   3
+#define VERSION_PATCH   00
                                                                  
 #endif

@@ -139,6 +139,7 @@ void app_system_status_loop(SYS_status status){
 }
 
 void app_setup(void){
+	system_update_cpu_freq(SYS_CPU_160MHZ);
 	Led_Program_Config();
 	board_setup(); 
 }
